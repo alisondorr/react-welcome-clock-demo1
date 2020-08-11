@@ -1,7 +1,11 @@
 import React from "react";
 
+/*** Copy this code block to Welcome.js ***/
 function Welcome(props) {
-  return <div className="Welcome">Welcome, {props.name}!</div>;
+  return (
+    <div>
+      <h1>Hello, {props.name}!</h1>
+    </div>
+  );
 }
-
 export default Welcome;
