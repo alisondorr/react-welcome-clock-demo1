@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-class Contact extends Component {
+class Answer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             submitted: false,
             formData: {
-                firstName: "",
-                lastName: "",
-                email: ""
+                jeopardyAnswer: "",
             }
         }
     }
@@ -17,18 +15,14 @@ class Contact extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label>First Name:</label>
-                        <input onChange={this.handleChange} type="text" name="firstName" value={this.state.formData.firstName} />
+                        <label>Enter Jeopardy Answer:</label>
+                        <input onChange={this.handleChange} type="text" name="jeopardyAnswer" value={this.state.formData.jeopardyAnswer} />
                     </div>
-                    <div>
-                        <label>Last Name:</label>
-                        <input onChange={this.handleChange} type="text" name="lastName" value={this.state.formData.lastName} />
-                    </div>
-                    <button>Submit Form</button>
+                   
+                    <button>Submit Answer</button>
                     <br />
-                    {this.state.formData.firstName}
+                    {this.state.formData.jeopardyAnswer}
                     <br />
-                    {this.state.formData.lastName}
                 </form>
             </div>
         );
@@ -38,7 +32,7 @@ class Contact extends Component {
         //this will allow us to make sure we don't lose data when calling setState method
         let newFormData = this.state.formData;
         //update the specific field in our new object
-        newFormData[event.target.name] = event.target.value;
+        newFormData[event.target.answer] = event.target.value;
         //update the formData object in state with the new 
         this.setState({ formData: newFormData });
     }
@@ -57,23 +51,30 @@ class Contact extends Component {
         this.setState({
             submitted: false,
             formData: {
-                firstName: "",
-                lastName: "",
-                email: ""
+                jeopardyAnswer "",
             }
         })
     }
-
-    render() {
-        //   show the thank you message if the form has been submitted
-        if (this.state.submitted) {
-            return (
-                <div>
-                    Thank you, {this.state.formData.firstName}, for submitting the form <br />
-                    <button onClick={this.resetForm}>Reset Form</button>
-                </div>
-            )
-        }
-    }
 }
-export default Contact
+
+// render() {
+//     //show the thank you message if the form has been submitted
+//     if (this.state.submitted) {
+//         return (
+//             <div>
+//                 Thank you, {this.state.formData.firstName}, for      submitting your jeopardy answer <br />
+//             </div>
+//         )
+//        score =0
+//        if (jeopardyAnswer = this.state.data.answer)
+//          <div>
+//                Congradulation, {this.state.formData.firstName}, you are correct <br />
+//               score =score + {this.state.data.value
+//}
+//          Sorry, {this.state.formData.firstName}, you are incorrect <br/>
+//              score =score - {this.state.data.value}
+//     }
+//                 <button onClick={this.resetForm}>Reset Form</button>
+//</div>
+export default score;
+

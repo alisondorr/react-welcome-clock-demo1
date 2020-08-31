@@ -6,8 +6,8 @@ import NoMatch from "./components/nomatch/NoMatch"
 import Welcome from "./components/welcome/Welcome";
 import Clock from "./components/clock/Clock";
 import Contact from "./components/contact/Contact";
-//import { Route } from 'react-router-dom';
-//import { BrowserRouter } from 'react-router-dom'
+import Navigation from "./components/navigation/Navigation"
+import Jeopardy from "./components/jeopardy/Jeopardy"
 
 import {
   Switch,
@@ -19,6 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navigation />
         <Switch>
           <Route
             exact
@@ -39,6 +40,22 @@ class App extends Component {
             path="/contact"
             component={Contact}
           />
+          <Route
+            exact
+            path="/jeopardy"
+            component={Jeopardy}
+          />
+          <Route
+            exact
+            path="/jeopardy"
+            component={Jeopardy}
+          />
+
+
+
+
+
+
           <Route
             component={NoMatch}
           />
